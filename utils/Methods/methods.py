@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 import torch.nn.functional as F
 
-"""=========================用于特征提取============================="""
+"""=========================Feature Extraction============================="""
 
 
 def rms(data):
@@ -53,7 +53,7 @@ def USTD(data):
     return np.std(data, ddof=1)
 
 
-"""=================用于评估========================="""
+"""=======================Criteria========================="""
 
 
 def js_div(p_output, q_output, get_softmax=True):
@@ -123,7 +123,7 @@ def get_smooth_curve(curve):
     return np.average(ka), no, pos
 
 
-"""================用于标准化/初始化========================="""
+"""================Normalization========================="""
 
 
 def Mu_Normalization(data, Mu=256):
@@ -139,7 +139,7 @@ def kaiming_normal_init(m):
         nn.init.kaiming_normal_(m.weight, nonlinearity='sigmoid')
 
 
-"""================模型通用模块======================="""
+"""==================Common Module======================="""
 
 
 class SEBlock(nn.Module):
@@ -169,14 +169,15 @@ class NoSEBlock(nn.Module):
         return x
 
 
-"""============模型后处理============="""
+"""============Post-process============="""
 
 
 def avg_smoothing(window_size, s):
     """
-    :param window_size: 处理窗口大小 (int)
-    :param s: 待处理序列数据(numpy array)
-    :return: 平滑后数据(numpy array)
+    For Pytorch
+    :param window_size: processing window size (int)
+    :param s: serial data to handle(numpy array)
+    :return: smoothened data(numpy array)
     """
     for j in range(s.shape[0]):
         for i in range(s.shape[1]):
@@ -186,9 +187,10 @@ def avg_smoothing(window_size, s):
 
 def avg_smoothing_np(window_size, s):
     """
-    :param window_size: 处理窗口大小 (int)
-    :param s: 待处理序列数据(torch tensor)
-    :return: 平滑后数据(torch tensor)
+    For numpy
+    :param window_size: processing window size (int)
+    :param s: serial data to handle(numpy array)
+    :return: smoothened data(numpy array)
     """
     for j in range(s.shape[0]):
         for i in range(s.shape[1]):
@@ -196,7 +198,7 @@ def avg_smoothing_np(window_size, s):
     return s
 
 
-"""杂项"""
+"""=========================Misc=============================="""
 
 
 def draw_graph(output, target, channel_num=10):
@@ -224,7 +226,6 @@ def draw_graph_2c(output, target):
     return fig
 
 def str2bool(v):
-    # print(v)
     if isinstance(v, bool):
         return v
     if str(v).strip().lower() in ['yes', 'true', 't', 'y', '1']:

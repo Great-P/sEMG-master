@@ -60,7 +60,7 @@ def estimation(test_subject):
         # output_test = model.gen_encoder(data)[0]  # BERT-based/TCN
         # output_test, y_c, y_s, x_hat, = model(data)[0:4]  # BERT-based/TCN
         # output_test, y_c, x_hat_c, x_hat_r, = model(data)[0:4]  # BERT-based/TCN
-        # output_test = model.inference(data)  # LCSN
+        output_test = model.inference(data)  # LCSN
 
         output_test = output_test.view(output_test.shape[1],
                                        output_test.shape[2]).detach().cpu()
