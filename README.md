@@ -54,4 +54,4 @@
 }
 ```
 #### Lifelong Learning Strategy
-![image](imgs/ProcedureCLSN.bmp)
+<img src="imgs/ProcedureCLSN.bmp" style="zoom:45%;" />
