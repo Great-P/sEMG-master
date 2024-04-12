@@ -2,7 +2,7 @@
 
 [//]: # (> We are our own true masters)
 
-[*] Simple toolkit of predicting hand motion via sEMG signal
+Simple toolkit of predicting hand motion via sEMG signal
 
 > This toolkit project is currently in its early stages and is a work in progress. It is now an early representation. 
 > 
