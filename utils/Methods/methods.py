@@ -15,39 +15,6 @@ import torch.nn.functional as F
 def rms(data):
     return np.sqrt((np.sum(data ** 2)) / data.shape[0])
 
-
-def m0(data):
-    return np.log(np.sqrt(np.sum(data ** 2)))
-
-
-def m2(data):
-    i_array = np.array([i + 1 for i in range(data.shape[0])])
-    m2_temp = np.sum((i_array * data) ** 2)
-    # for i in range(data.shape[0]):
-    #     m2_temp = m2_temp + ((i + 1) * data[i]) ** 2
-    return np.sqrt(m2_temp / data.shape[0])
-
-
-def m4(data):
-    i_array = np.array([i + 1 for i in range(data.shape[0])])
-    m4_temp = np.sum(((i_array ** 2) * data) ** 2)
-    # for i in range(data.shape[0]):
-    #     m4_temp = m4_temp + (data[i] * ((i + 1) ** 2)) ** 2
-    return np.sqrt(m4_temp / data.shape[0])
-
-
-def PS(data):
-    """Peak Stress"""
-    return m4(data) / (m2(data) * m0(data))
-
-
-def SE(data):
-    """Shake Expectation"""
-    i_array = np.array([i + 1 for i in range(data.shape[0])])
-    se_temp = np.sum(np.abs((i_array ** 2) * data))
-    return se_temp / data.shape[0]
-
-
 def USTD(data):
     """Unbiased Standard Deviation"""
     return np.std(data, ddof=1)
