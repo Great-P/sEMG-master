@@ -49,9 +49,18 @@ Simple toolkit of predicting hand motion via sEMG signal
 ```
 ### CSLN(LCSN)
 ```
-@article{
-  Coming soon
+@article{10530128,
+  author={Chen, Xingjian and Guo, Weiyu and Lin, Chuang and Jiang, Ning and Su, Jingyong},
+  journal={IEEE Transactions on Neural Systems and Rehabilitation Engineering}, 
+  title={Cross-Subject Lifelong Learning for Continuous Estimation From Surface Electromyographic Signal}, 
+  year={2024},
+  volume={32},
+  number={},
+  pages={1965-1973},
+  keywords={Task analysis;Adaptation models;Feature extraction;Estimation;Training;Transfer learning;Predictive models;sEMG;cross-subject;continuous estimation;lifelong learning;hand kinematics},
+  doi={10.1109/TNSRE.2024.3400535}
 }
+
 ```
 #### Lifelong Learning Strategy
 <img src="imgs/ProcedureCLSN.bmp" style="zoom:45%;" />
